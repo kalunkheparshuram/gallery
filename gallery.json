@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "name": "abstract",
+      "images": [
+        "abstract1.jpg"
+      ]
+    },
+    {
+      "name": "clouds",
+      "images": [
+        "cloud1.jpg",
+        "cloud2.jpg",
+        "cloud3.jpg",
+        "cloud4.jpg",
+        "cloud5.jpg"
+      ]
+    },
+    {
+      "name": "landscape",
+      "images": [
+        "landscape1.jpg"
+      ]
+    },
+    {
+      "name": "motorcycle",
+      "images": [
+        "motorcycle1.jpg"
+      ]
+    },
+    {
+      "name": "nature",
+      "images": [
+        "nature1.jpg",
+        "nature2.jpg",
+        "nature3.jpg",
+        "nature4.jpg",
+        "nature5.jpg",
+        "nature6.jpg",
+        "nature7.jpg",
+        "nature8.jpg",
+        "nature9.jpg",
+        "nature10.jpg",
+        "nature11.jpg"
+      ]
+    },
+    {
+      "name": "sky",
+      "images": [
+        "sky1.jpg"
+      ]
+    }
+  ]
+}
