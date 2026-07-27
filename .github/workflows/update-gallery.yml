@@ -1,0 +1,53 @@
+name: Update Gallery
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  gallery:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate gallery.json
+        run: node scripts/generate-gallery.js
+
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+        with:
+          repository: kalunkheparshuram/kalunkheparshuram.github.io
+          token: ${{ secrets.PORTFOLIO_TOKEN }}
+          path: portfolio
+
+      - name: Copy gallery.json
+        run: cp gallery.json portfolio/gallery.json
+
+      - name: Commit changes
+        run: |
+          cd portfolio
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add gallery.json
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git commit -m "Auto update gallery"
+
+          git push
